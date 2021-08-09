@@ -1,0 +1,14 @@
+.simpsons{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background: rgba(43, 112, 172, 0.62);
+}
+.target{
+    width: 40%;
+    border: rgba(55, 255, 0, 0.82) solid 2px;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px 20px 10px 50px ;
+    background: rgba(255, 235, 205, 0.63);
+}
