@@ -1,4 +1,15 @@
 .App{
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
+    background: rgba(222, 184, 135, 0.55);
+}
+.user{
+    border: rgba(143, 188, 143, 0.32) solid 2px;
+    border-radius: 10px;
+    width: 33%;
+    margin: 10px 10px 10px 150px;
+    padding: 10px 10px 10px 50px;
+    background: rgba(0, 255, 255, 0.17);
+
 }

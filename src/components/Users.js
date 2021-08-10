@@ -1,7 +1,7 @@
 export function Users({id,name, username,email,phone,website,nameCompany,catchPhrase,bs})
 {
 return (
-    <div className= "">
+<div>
         <h3>{id}.Name: {name} - Username: {username}</h3>
         <p><strong>email:</strong> {email} </p>
         <p><strong>phone: </strong>{phone} <strong>website:</strong> {website}</p>
@@ -10,7 +10,7 @@ return (
         <p><strong>CathPhrase: </strong>{catchPhrase} </p>
         <p><strong>bs:</strong> {bs}</p>
         <h3>Address:</h3>
-    </div>
+</div>
 )
 }
 
