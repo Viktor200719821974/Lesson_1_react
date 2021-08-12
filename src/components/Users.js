@@ -1,11 +1,12 @@
 import User from "./User";
 
 
-export default function Users()
+export default function Users(props)
+
 {
 return (
 <div>
-        <User/>
+       <User props={props}/>
 </div>
 )
 }
