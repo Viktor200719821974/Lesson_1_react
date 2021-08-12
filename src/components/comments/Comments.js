@@ -1,4 +1,4 @@
-import {Comment} from "./comment";
+import {Comment} from "./Comment";
 
 export  function Comments({comments}){
 
@@ -6,7 +6,7 @@ export  function Comments({comments}){
     return (
         <div>
             {
-               comments.map(value => <Comment item={value} key={value.id}/>)
+                comments.map(value => <Comment item={value} key={value.id}/>)
 
             }
         </div>
