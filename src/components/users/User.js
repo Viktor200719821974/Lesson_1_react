@@ -1,6 +1,6 @@
-import {Posts} from "../posts/posts";
+import {Posts} from "../posts/Posts";
 import {useEffect, useState} from "react";
-import {getPost, getPosts} from "../../service/posts.service";
+import {getPost} from "../../service/posts.service";
 
 export function User({item}){
     let [posts, setPosts] = useState( []);
@@ -28,7 +28,7 @@ export function User({item}){
             </ul>
 
 <div>
-    <h3>Posts of users:</h3>
+
     <Posts posts={posts}/>
 </div>
         </div>

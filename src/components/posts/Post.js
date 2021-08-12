@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getComment, getComments} from "../../service/comment.service";
+import {getComment} from "../../service/comment.service";
 import {Comments} from "../comments/Comments";
 
 export function Post({item}){
@@ -9,13 +9,14 @@ export function Post({item}){
     },[item.id]);
     return(
         <div>
+            <h3>Posts of users {item.userId}:</h3>
             <ul>
                 <li><strong>{item.title}</strong></li>
-                {item.body}
+               <p> {item.body}</p>
             </ul>
 
             <div>
-                <h3>Comments of users:</h3>
+                <h3>Comments of users {item.userId}:</h3>
                 <Comments comments = {comments}/>
             </div>
         </div>

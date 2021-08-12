@@ -3,7 +3,7 @@ function getComments(){
         .then(value => value.json())
 }
 function getComment(postId){
-    return fetch('http://jsonplaceholder.typicode.com/posts/' + postId + 'comments/')
+    return fetch('http://jsonplaceholder.typicode.com/posts/' + postId + '/comments/')
         .then(value => value.json())
 }
 

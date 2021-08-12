@@ -1,7 +1,11 @@
 export function Comment({item}){
     return(
         <div>
-            {item.name};
+            <ul>
+           <li> <strong>{item.name}</strong></li>
+                <li><strong>emailUser:</strong>{item.email}</li>
+                <p>{item.body}</p>
+        </ul>
         </div>
     )
 }
