@@ -1,15 +1,17 @@
 
-export function User({item}){
-
+export function User({item, chosePost}){
+const onClickPost = () => {
+    chosePost(item);
+}
     return (
         <div>
             <h2>{item.id}.{item.name}  - {item.username}</h2>
-
                 <li><strong>Street:</strong> {item.address.street}</li>
             <li><strong>Suite:</strong></li>
                     <p><strong>email:</strong> {item.email}</p>
                 <ul>
-                    <li><strong>Address:</strong>ong> {item.address.suite}</li>
+                    <li><strong>Address:</strong></li>
+                    <li>{item.address.suite}</li>
                 <li><strong>City:</strong> {item.address.city}</li>
                 <li><strong>Zipcode:</strong> {item.address.zipcode}</li>
                 <strong>Geo:</strong>
@@ -22,7 +24,7 @@ export function User({item}){
                 <li><strong>CatchPhrase:</strong> {item.company.catchPhrase}</li>
                 <li><strong>Bs:</strong> {item.company.bs}</li>
             </ul>
-            <button>details</button>
+            <button onClick={onClickPost}>details</button>
             <div>
 
                 {/*<Posts posts={posts}/>*/}
