@@ -1,8 +1,7 @@
-
 export function User({item, chosePost}){
-const onClickPost = () => {
-    chosePost(item);
-}
+    const onClickPost = () => {
+        chosePost(item);
+    }
     return (
         <div>
             <h2>{item.id}.{item.name}  - {item.username}</h2>
@@ -24,9 +23,9 @@ const onClickPost = () => {
                 <li><strong>CatchPhrase:</strong> {item.company.catchPhrase}</li>
                 <li><strong>Bs:</strong> {item.company.bs}</li>
             </ul>
-            <button onClick={onClickPost}>details</button>
-            <div>
 
+            <div>
+                <button onClick={onClickPost}>details</button>
                 {/*<Posts posts={posts}/>*/}
             </div>
         </div>

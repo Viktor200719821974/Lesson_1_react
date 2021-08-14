@@ -1,0 +1,9 @@
+.user{
+    background: burlywood;
+}
+.posts{
+    background: darkseagreen;
+}
+.users{
+    display: flex;
+}
