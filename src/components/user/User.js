@@ -26,7 +26,13 @@ export function User({item, chosePost}){
 
             <div>
                 <button onClick={onClickPost}>details</button>
+
                 {/*<Posts posts={posts}/>*/}
+            </div>
+            <div className={'posts'}>
+                {
+
+                }
             </div>
         </div>
     )
