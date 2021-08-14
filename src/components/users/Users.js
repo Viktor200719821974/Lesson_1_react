@@ -2,8 +2,8 @@ import {useEffect, useState} from "react";
 import {User} from "../user/User";
 import {getUsers} from "../../service/users.service";
 import {getPost} from "../../service/posts.service";
-import {Posts} from "../posts/Posts";
-import Users.css
+import {Posts} from "../posts/Posts"
+
 
 
 export  function Users(item){
