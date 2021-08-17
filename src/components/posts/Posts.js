@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Post} from "../post/Post";
 import {getPosts} from "../../service/posts.service";
-
+import './Posts.css';
 
 
 
@@ -27,11 +27,11 @@ export  function Posts(item){
                     posts.map(value => <Post item={value} key={value.id} choosePost={choosePost}/>)
                 }
             </div>
-
+<div>
                 {
                    post && <div className={'post_button'}>{post.body}</div>
                 }
-
+        </div>
         </div>
     );
 }
