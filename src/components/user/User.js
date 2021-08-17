@@ -3,14 +3,13 @@ export function User({item, chosePost}){
         chosePost(item);
     }
     return (
-        <div>
+        <div >
             <h2>{item.id}.{item.name}  - {item.username}</h2>
-                <li><strong>Street:</strong> {item.address.street}</li>
-            <li><strong>Suite:</strong></li>
                     <p><strong>email:</strong> {item.email}</p>
                 <ul>
                     <li><strong>Address:</strong></li>
-                    <li>{item.address.suite}</li>
+                    <li><strong>Street:</strong> {item.address.street}</li>
+                    <li><strong>Suite:</strong>{item.address.suite}</li>
                 <li><strong>City:</strong> {item.address.city}</li>
                 <li><strong>Zipcode:</strong> {item.address.zipcode}</li>
                 <strong>Geo:</strong>
@@ -27,12 +26,11 @@ export function User({item, chosePost}){
             <div>
                 <button onClick={onClickPost}>details</button>
 
-                {/*<Posts posts={posts}/>*/}
             </div>
             <div className={'posts'}>
-                {
 
-                }
+
+
             </div>
         </div>
     )

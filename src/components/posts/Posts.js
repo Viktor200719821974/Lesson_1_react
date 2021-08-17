@@ -1,8 +1,10 @@
 export function Posts({item}){
     return (
         <div>
-            <h2>{item.title}</h2>
-
+<ul>
+<li>{item.userId}.{item.title}</li>
+    <li>{item.body}</li>
+</ul>
         </div>
     );
 }
