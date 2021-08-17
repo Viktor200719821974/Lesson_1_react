@@ -19,19 +19,18 @@ export  function Posts(item){
     const choosePost = (id) =>{
        let choosenPost = posts.find(value => value.id == id);
        setPost(choosenPost);
+const chooseComments =() =>{
+
+}
     }
     return (
         <div className={'posts'}>
             <div className={'post'}>
                 {
-                    posts.map(value => <Post item={value} key={value.id} choosePost={choosePost}/>)
+                    posts.map(value => <Post item={value} key={value.id} choosePost={choosePost} post={post}/>)
                 }
             </div>
-<div>
-                {
-                   post && <div className={'post_button'}>{post.body}</div>
-                }
-        </div>
+
         </div>
     );
 }
