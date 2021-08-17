@@ -7,13 +7,8 @@ export function Post({item, choosePost}){
                <h3>{item.userId}. {item.id}. {item.title}</h3>
             <div>
                 <button onClick={onClickPost}>details</button>
-
             </div>
-            <div className={'posts'}>
 
-
-
-            </div>
         </div>
     )
 }

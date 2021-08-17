@@ -19,7 +19,6 @@ export  function Posts(item){
     const choosePost = (id) =>{
        let choosenPost = posts.find(value => value.id == id);
        setPost(choosenPost);
-        console.log(choosenPost);
     }
     return (
         <div className={'posts'}>
@@ -30,7 +29,7 @@ export  function Posts(item){
             </div>
 
                 {
-                   post && <div>{post.body}</div>
+                   post && <div className={'post_button'}>{post.body}</div>
                 }
 
         </div>
