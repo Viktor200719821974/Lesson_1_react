@@ -1,4 +1,3 @@
-import {Comments} from "../comments/Comments";
 
 export function Post({item, choosePost,post}){
     const onClickPost = () => {

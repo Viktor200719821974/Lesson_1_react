@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {Post} from "../post/Post";
-import {getPosts} from "../../service/posts.service";
+import {getPost, getPosts} from "../../service/posts.service";
 import './Posts.css';
 
 
@@ -16,12 +16,9 @@ export  function Posts(item){
     },[]);
 
 
-    const choosePost = (id) =>{
-       let choosenPost = posts.find(value => value.id == id);
-       setPost(choosenPost);
-const chooseComments =() =>{
-
-}
+    const choosePost = (id) => {
+        let choosenPost = posts.find(value => value.id == id);
+        setPost(choosenPost);
     }
     return (
         <div className={'posts'}>

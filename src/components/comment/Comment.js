@@ -1,6 +1,6 @@
-export function Comment({item, chooseComment, comment}){
-    const onClickComment = () => {
-        chooseComment(item.id);
+export function Comment({item, chooseComment}){
+    const  onClickComment = () => {
+        chooseComment(item);
     }
     return (
         <div >
@@ -8,7 +8,7 @@ export function Comment({item, chooseComment, comment}){
             <p>{item.email}</p>
 
             <div>
-                {comment.body}
+
             </div>
             <div>
 
