@@ -13,7 +13,7 @@ export function Forms(){
                 <input type="text" name={'model'} placeholder={'enter model'}/>
                 <input type="number" name={'price'} placeholder={'enter price'}/>
                 <input type="number" name={'year'} placeholder={'enter year'}/>
-                <button>save</button>
+                <input type="submit"/>
             </form>
         </div>
     )

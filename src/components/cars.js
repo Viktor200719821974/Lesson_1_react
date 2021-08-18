@@ -4,8 +4,8 @@ import {Car} from "./Car";
 export function Cars(){
     let [cars, setCars] = useState([]);
     useEffect(() =>{
-        getCars().then(value => setCars([...value]));
-    },[]);
+        getCars() .then(value =>  setCars([...value]));
+    },[cars.id]);
     return(
         <div>
             {
