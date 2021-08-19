@@ -1,14 +1,14 @@
 
 import {SuperForm} from "./components/SuperForm";
-import {Cars} from "./components/cars";
 import {Forms} from "./components/Forms";
+import {Cars} from "./components/cars";
 
 function App() {
   return (
     <div>
         <Forms/>
      <SuperForm/>
-        <Cars/>
+<Cars/>
     </div>
   );
 }

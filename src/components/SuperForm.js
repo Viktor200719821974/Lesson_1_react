@@ -19,6 +19,11 @@ export function SuperForm(){
                 <input type="number" name={'year'} value={formState.year} onChange={onFormInputChange}/>
                 <input type="submit"/>
             </form>
+            {<div>
+
+              <h2>  {formState.id}.{formState.model}</h2>
+                <p>{formState.price} - {formState.year}</p>
+            </div>}
         </div>
     )
 }
