@@ -3,8 +3,6 @@ import {Post} from "../post/Post";
 import {getPost, getPosts} from "../../service/posts.service";
 import './Posts.css';
 
-
-
 export  function Posts(item){
 
     let [posts, setPosts] = useState( []);
