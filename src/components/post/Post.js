@@ -13,7 +13,6 @@ export function Post({item, choosePost,post}){
             </div>
             <div>
                 {post.body}
-
             </div>
 
         </div>

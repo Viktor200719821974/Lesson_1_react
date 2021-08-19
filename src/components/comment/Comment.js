@@ -3,6 +3,7 @@ export function Comment({item, chooseComment}){
         chooseComment(item);
     }
     return (
+
         <div >
             <h3>{item.postId}. {item.id}. {item.name}</h3>
             <p>{item.email}</p>
