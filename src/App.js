@@ -7,26 +7,32 @@ import {
 } from "react-router-dom";
 import {Users} from "./components/Users";
 import {Posts} from "./components/Posts";
+import {Comments} from "./components/Comments";
 function App() {
   return (
       <Router>
     <div>
-      <link to={'/'}>App</link>
-      <link to={'./components/Users'}>Users-page</link>
-      <link to={'./components/Posts'}>Posts-page</link>
-      <link to={'./components/Comments'}>Comments-page</link>
+      <Link to={'/'}>App</Link>
+        <br/>
+      <Link to={'./components/Users'}>Users-page</Link>
+        <br/>
+      <Link to={'./components/Posts'}>Posts-page</Link>
+        <br/>
+      <Link to={'./components/Comments'}>Comments-page</Link>
+        <br/>
     </div>
         <hr/>
         <div>
-          <Route path={'./components/Users'}>
-            <Users/>
-          </Route>
+          <Route path={'./components/Users'} render={() => <Users/>}/>
         </div>
         <div>
-          <Route path={'/components/Posts'} component={Posts}/>
-
+          <Route path={'/components/Posts'} render={() => <Posts/>}/>
         </div>
+          <div>
+              <Route path={'./components/Comments'} render={() => <Comments/>}/>
+          </div>
         </Router>
+
   );
 }
 

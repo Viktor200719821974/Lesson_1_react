@@ -10,12 +10,9 @@ export  function Posts(item){
     },[]);
     return (
         <div className={'posts'}>
-
                 {
                     posts.map(value => <Post item={value} key={value.id}/>)
                 }
-
-
         </div>
     );
 }
