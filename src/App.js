@@ -23,13 +23,13 @@ function App() {
     </div>
         <hr/>
         <div>
-          <Route path={'./components/Users'} render={() => <Users/>}/>
+          <Route path={'/components/Users'} render={() => <Users/>}/>
         </div>
         <div>
           <Route path={'/components/Posts'} render={() => <Posts/>}/>
         </div>
           <div>
-              <Route path={'./components/Comments'} render={() => <Comments/>}/>
+              <Route path={'/components/Comments'} render={() => <Comments/>}/>
           </div>
         </Router>
 
