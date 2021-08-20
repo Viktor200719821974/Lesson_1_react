@@ -2,11 +2,11 @@ import {useEffect, useState} from "react";
 import {Post} from "../post/Post";
 import {getPostId, getPosts} from "../../service/posts.service";
 import './Posts.css';
-
+import {buttonComment} from "../../service/buttonComment";
 export  function Posts(item){
 
     let [posts, setPosts] = useState( []);
-    let [post, setPost] = useState([]);
+    let [post, setPost] = useState([null]);
 
     useEffect(() =>{
         getPosts().then(value => setPosts([...value]));
@@ -14,11 +14,11 @@ export  function Posts(item){
 
 
     const choosePost = (id) => {
-        // let choosenPost = posts.find(value => value.id == id);
-        // setPost(choosenPost);
-       let choosenPost = getPostId(id).then(value => value.id === id);
+        let choosenPost = posts.find(value => value.id == id);
         setPost(choosenPost);
-        console.log(id);
+       // getPostId(id).then(value => value.id === id);
+       //  setPost(choosenPost);
+        buttonComment(id);
     }
     return (
         <div className={'posts'}>
@@ -27,7 +27,10 @@ export  function Posts(item){
                      posts.map(value => <Post item={value} key={value.id} choosePost={choosePost} post={post}/>)
                 }
             </div>
-            {<div>{post.body}</div>}
+            {<div>
+                <p>{post.id}. {post.body}</p>
+
+            </div>}
         </div>
     );
 }

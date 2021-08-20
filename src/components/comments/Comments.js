@@ -13,17 +13,17 @@ export  function Comments(item){
 
 
     const chooseComment = (id) =>{
-        let choosenComment = Comments.find(value => value.id == id);
+        let choosenComment = comments.find(value => value.id === id);
         setComment(choosenComment);
 
     }
     return (
         <div className={'comments'}>
-            <div className={'comment'}>
+
                 {
                     comments.map(value => <Comment item={value} key={value.id} chooseComment={chooseComment} comment={comment}/>)
                 }
-            </div>
+            {<div><p>{comment.id}. {comment.body}</p></div>}
 
         </div>
     );

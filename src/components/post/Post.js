@@ -1,5 +1,6 @@
 
-export function Post({item, choosePost,post}){
+
+export function Post({item, choosePost}){
     const onClickPost = () => {
         choosePost(item.id);
     }
@@ -11,11 +12,6 @@ export function Post({item, choosePost,post}){
 
                 <button onClick={onClickPost}>details</button>
             </div>
-
-            {/*<div>*/}
-            {/*    {post.body}*/}
-            {/*</div>*/}
-
         </div>
     )
 }
