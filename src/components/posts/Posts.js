@@ -7,7 +7,6 @@ export  function Posts(item){
 
     let [posts, setPosts] = useState( []);
     let [post, setPost] = useState([]);
-    console.log(posts);
 
     useEffect(() =>{
         getPosts().then(value => setPosts([...value]));
@@ -15,10 +14,11 @@ export  function Posts(item){
 
 
     const choosePost = (id) => {
-        let choosenPost = posts.find(value => value.id == id);
+        // let choosenPost = posts.find(value => value.id == id);
+        // setPost(choosenPost);
+       let choosenPost = getPostId(id).then(value => value.id === id);
         setPost(choosenPost);
-       // getPostId(id).then(value => setPost([...value]));
-        console.log(post);
+        console.log(id);
     }
     return (
         <div className={'posts'}>
