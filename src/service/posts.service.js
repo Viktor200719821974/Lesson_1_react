@@ -7,4 +7,9 @@ function   getPost ( userId ) {
         .then ( value  =>  value . json ( ) )
 }
 
-export  { getPosts ,  getPost } ;
+function   getPostId ( id ) {
+    return  fetch ( 'http://jsonplaceholder.typicode.com/posts/'+ id )
+        .then ( value  =>  value . json ( ))
+}
+
+export  { getPosts ,  getPost, getPostId } ;

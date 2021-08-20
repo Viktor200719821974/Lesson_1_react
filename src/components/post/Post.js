@@ -11,9 +11,10 @@ export function Post({item, choosePost,post}){
 
                 <button onClick={onClickPost}>details</button>
             </div>
-            <div>
-                {post.body}
-            </div>
+
+            {/*<div>*/}
+            {/*    {post.body}*/}
+            {/*</div>*/}
 
         </div>
     )
