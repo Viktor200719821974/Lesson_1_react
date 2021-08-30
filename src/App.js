@@ -9,7 +9,9 @@ function App() {
   let {users} = state;
 
   useEffect(() =>{
-    fetchUsers().then(value =>{ dispatch(fetchUser(value))
+
+    fetchUsers().then(value =>{
+      dispatch(fetchUser(value))
     });
   }, []);
 
@@ -17,9 +19,10 @@ function App() {
     e.preventDefault();
     let name = e.target.name.value;
     let user = {name};
-    addUser(user).then(value => {
+    addUser(user).then(value =>{
+      console.log(value)
       dispatch(pushUser(value))
-    });
+  });
   };
 
   return (
@@ -30,7 +33,7 @@ function App() {
       </form>
       <hr/>
       {
-        users.map((value)=> <div>{value.name}</div>)
+        users.map((value)=> <div>{value.id}. {value.name}</div>)
       }
     </div>
   );

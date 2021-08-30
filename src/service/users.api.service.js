@@ -6,9 +6,11 @@ const fetchUsers = () => {
 const addUser = (user) =>{
     return fetch(url, {
         method: 'POST',
-        headers: {'Content-type': 'application/json...'},
+        headers: {'Accept': 'application/json',
+            'Content-type': 'application/json',
+        },
         body: JSON.stringify(user)
     })
-
+        .then(value => value.json());
 }
 export {fetchUsers, addUser};

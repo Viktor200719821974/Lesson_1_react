@@ -5,8 +5,8 @@ export const rootReducer = (state={users: []}, action) => {
         case FETCH_USERS:
             return {...state, users: [...action.payload]};
         case PUSH_USER:
-            console.log(action.payload);
-            return {...state, users: [state.users, action.payload]};
+            // console.log(action.payload);
+            return {...state, users: [...state.users, action.payload]};
 
         default:
             return state;
