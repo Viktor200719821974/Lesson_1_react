@@ -4,7 +4,7 @@ export function SuperForm(){
     let [formState, setFormState] = useState({id: '', model: '', price: '', year: ''})
 
     let save = (e) =>{
-        e.preventDefault();
+        // e.preventDefault();
         saveCar(formState);
     }
     let onFormInputChange = (e) =>{
