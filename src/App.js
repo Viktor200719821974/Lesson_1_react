@@ -7,7 +7,8 @@ function App() {
     // let dispatch = useDispatch();
     // let {movies} = state;
   useEffect(() => {
-    getMovies().then(value => console.log(value.data.results.backdrop_path)
+    getMovies().then(value => console.log(value.data)
+
     );
   }, []);
   return (

@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getMovies} from "../service/movieService";
+import {getImages, getMovies} from "../service/movieService";
 import {MoviesList} from "./MoviesList";
 
 
@@ -8,11 +8,11 @@ export function Header(){
     console.log(movies);
     useEffect(() => {
         getMovies().then(value => setMovies([...value.data.results]));
-
     },[]);
+
     return (
         <div>
-            {movies.map(value => <MoviesList item={value}/>)}
+            {movies.map(value => <MoviesList item={value} key={value.id}/>)}
         </div>
     )
 }
