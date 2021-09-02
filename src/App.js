@@ -1,6 +1,7 @@
 import {useEffect} from "react";
 import {getMovies} from "./service/movieService";
 import {useSelector,useDispatch} from "react-redux";
+
 import {Header} from "./components/Header";
 function App() {
     // let state = useSelector(state => state);
