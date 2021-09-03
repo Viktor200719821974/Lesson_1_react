@@ -20,7 +20,7 @@ function App() {
     let name = e.target.name.value;
     let user = {name};
     addUser(user).then(value =>{
-      console.log(value)
+
       dispatch(pushUser(value))
   });
   };
