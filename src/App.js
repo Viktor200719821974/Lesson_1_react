@@ -16,7 +16,8 @@ function App() {
         <Link to={'/Posts'}>Page Posts</Link>
       <hr/>
     </div>
-  <Route path={'/Users'} component={Users}/>
+    <Route exact path={'/'}/>
+  <Route  path={'/Users'} component={Users}/>
   <Route path={'/Posts'} component={Posts} />
 </Router>
   );
