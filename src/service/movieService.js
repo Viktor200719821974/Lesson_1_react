@@ -9,10 +9,7 @@ const axiosMovies = axios.create(
 
     });
 
-const getMovies = async () => await axiosMovies.get('discover/movie');
-const url = 'https://image.tmdb.org/t/p/w500/';
-function getImages (poster_path){
-    return (url + poster_path)
-}
-
-export { getMovies, getImages};
+const getMovies = async () => await axiosMovies.get('/discover/movie');
+const getGenres = async ()=> await axiosMovies.get('/genre/movie/list');
+const getMovie = async (id) => await axiosMovies('/movie/'+ id);
+export { getMovies, getGenres, getMovie};
