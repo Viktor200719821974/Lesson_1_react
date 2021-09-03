@@ -21,17 +21,17 @@ function App() {
   return (
       <Router >
       <div>
-          <Header/>
+          {/*<Header/>*/}
 
           <Link to={'/'}>Back</Link>
-          <Link to={'/MoviesListCard'}>movie</Link>
+          {/*<Link to={'/MoviesListCard'}>movie</Link>*/}
 
       </div>
-          <Switch>
-          <Route exact path={'/MoviesListCard'} render={()=><div>home page</div>}/>
 
-          <Route exact path={'/'} render={()=><div>home page</div>}/>
-      </Switch>
+          {/*<Route  path={'/MoviesListCard'} component={MoviesListCard}/>*/}
+
+          <Route exact path={'/'} component={Header}/>
+
 
           </Router>
   );

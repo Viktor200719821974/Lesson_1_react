@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {getMovie} from "../service/movieService";
 
-export function MoviesListCard({item}){
+export function MoviesListCard(){
 
     // let [movie, setMovie] = useState([]);
     // useEffect(()=> {
@@ -9,7 +9,7 @@ export function MoviesListCard({item}){
     // },[item.id]);
     return (
         <div>
-
+            home page
         </div>
     )
 }
