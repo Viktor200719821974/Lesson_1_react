@@ -8,8 +8,13 @@ const routesConfig = [
     },
     {
         path:'/MoviesPage',
-        exact: true,
+        exact: false,
         component: MoviesPage
+    },
+    {
+        // path:'*',
+        // exact: true,
+        // component: MoviesPage
     }
 ];
 export default routesConfig;

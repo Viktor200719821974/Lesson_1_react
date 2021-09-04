@@ -1,4 +1,5 @@
 import './MoviesList.css';
+import MoviesImage from "./MoviesImage";
 const MoviesList = ({movies}) =>{
     return (
         <div>
@@ -6,7 +7,7 @@ const MoviesList = ({movies}) =>{
                 {movies.map(({id,title,imageUrl })=>
                     <li className={"list_item"} key={id}>
                         <a href="#">
-                        <img className={"movie_poster"} src={imageUrl} alt={title}/>
+                        <MoviesImage movies={movies} imageUrl={imageUrl} key={id}/>
                         <p>{title}</p>
                         </a>
                     </li>
