@@ -3,7 +3,7 @@ const MoviesList = ({movies}) =>{
     return (
         <div>
             <ul className={"list_container"}>
-                {movies.map(({id,title,backdrop_path,imageUrl })=>
+                {movies.map(({id,title,imageUrl })=>
                     <li className={"list_item"} key={id}>
                         <a href="#">
                         <img className={"movie_poster"} src={imageUrl} alt={title}/>

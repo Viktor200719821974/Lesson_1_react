@@ -2,23 +2,26 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    padding: 0;
+    padding: 0 ;
     list-style-type: none;
 }
 .list_item{
-width: 200px;
-    margin: 20px;
-    border-radius: 3px;
-    background-color: #fff;
+width: 500px;
+    margin: var(--spasing-medium);
+    border-radius: var(--border-radius-smail);
+    background-color: var(--color-white);
     cursor: pointer;
+
 }
 .list_item a {
     text-display: none;
-    color: #000;
+    color: var(--color-black);
     text-align: center;
 }
 .movie_poster{
 width: 100%;
+    height: 260px;
     object-fit: cover;
     object-position: top center;
+    border-radius: 3px 3px 0 0;
 }

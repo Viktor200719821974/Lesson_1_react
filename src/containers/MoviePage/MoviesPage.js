@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {axiosMovies} from "../../service/movieService";
-import {apiMoviesUrl} from "../../constants/api";
-import {getMoviesImage} from "../../service/functionData";
 import MoviesList from "../../components/MoviePage";
+import {getMoviesImage} from "../../service/functionData";
+import {apiMoviesUrl} from "../../constants/api";
 const MoviesPage = () =>{
     const [movies, setMovies] = useState(null);
     const getMovies = async (url) =>{
@@ -25,6 +25,7 @@ const MoviesPage = () =>{
     },[]);
     return (
         <div>
+            <h1 className="header_text">Navigation</h1>
             {movies && <MoviesList movies={movies}/>}
 
         </div>
