@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {getMovies, getGenres, getMovie} from "../service/movieService";
-import {MoviesList} from "./MoviesList";
+import {MoviesList} from "./MoviePage/MoviesList";
 import {GenreBadge} from "./GenreBadge";
 import {MoviesListCard} from "./MoviesListCard";
 
@@ -8,7 +8,7 @@ export function Header(){
     let [movies, setMovies] = useState([]);
     let [genres, setGenres] = useState([]);
     useEffect(() => {
-        getMovies().then(value => setMovies([...value.data.results]));
+        getMovies().then(value => console.log(value));
     },[]);
 useEffect(() => {
     getGenres().then(value =>
