@@ -2,6 +2,7 @@ import './App.css';
 import routesConfig from "../routes/routesConfig";
 import Header from "../components/Header/Header";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {GenreBadge} from "../components/GenreBadge/GenreBadge";
 const App = () =>{
   return (
 
@@ -16,6 +17,7 @@ const App = () =>{
               ))}
               </Switch>
               </div>
+              {/*<GenreBadge/>*/}
           </BrowserRouter>
       </div>
 

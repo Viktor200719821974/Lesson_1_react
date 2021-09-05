@@ -39,7 +39,6 @@ const MoviesPage = () =>{
     },[queryPage]);
     return (
         <div>
-            {/*<GenreBadge items={movies}/>*/}
             {/*<MovieNavigation getMovies={getMovies} prevPage={prevPage} nextPage={nextPage} counterPage={counterPage}/>*/}
             {movies && <MoviesList movies={movies}/>}
 

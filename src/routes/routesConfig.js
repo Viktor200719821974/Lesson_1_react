@@ -1,5 +1,6 @@
 import MoviesPage from "../containers/MoviePage";
 import HomePage from "../App/HomePage";
+import MovieList from "../components/MoviePage/MovieList";
 const routesConfig = [
     {
         path:'/',
@@ -8,13 +9,13 @@ const routesConfig = [
     },
     {
         path:'/MoviesPage',
-        exact: false,
+        exact: true,
         component: MoviesPage
     },
     {
-        // path:'*',
-        // exact: true,
-        // component: MoviesPage
+        path:'/MoviesPage/:id',
+        exact: true,
+        component: MovieList
     }
 ];
 export default routesConfig;
