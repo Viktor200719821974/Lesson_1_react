@@ -1,18 +1,18 @@
 .infoConteiner{
     display: flex;
+    /*background-image: var(--theme-default-background-info);*/
 }
 .imageInfo{
     border-radius: 10px;
-    border: 3px solid #6777c9;
+    border: 3px solid #27282b;
 }
 .containerName{
     text-align: center;
     font-size: 35px;
-    color: #6a83fb;
+    color: #181818;
 }
 .movieInfo{
-    color: rgb(149, 73, 39);
+    color: rgb(17, 16, 16);
     margin: 5px;
     font-size: 25px;
-    border: #10100e solid 2px;
 }

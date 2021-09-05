@@ -9,6 +9,7 @@
  --font-family-main: sans-serif;
  --theme-default-header: #cccc46;
  --theme-default-film-lopo: url('../static/film-loop.jpg');
+ --theme-default-background-info: url('../static/sky-clouds-texture-background-preview.jpg');
  --transition: .4s;
  --text-shadow-yellow:
          0 0 2px var(--color-white),
@@ -21,7 +22,7 @@ padding: 0;
  background-color: #6777c9;
  font-family: var(--font-family-main);
  font-size: 16px;
- background-image: var(--theme-default-film-lopo);
+ background-image: var(--theme-default-background-info);
  background-size: cover ;
  background-repeat: no-repeat;
  background-position: top left;
