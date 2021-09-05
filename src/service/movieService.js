@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {apiBaseUrl} from "../constants/api";
+import {apiBaseUrl, urlGeners} from "../constants/api";
 const axiosMovies = axios.create(
     {
         baseURL: apiBaseUrl,
@@ -8,6 +8,6 @@ const axiosMovies = axios.create(
         }
 
     });
-const getGenres = async ()=> await axiosMovies('/genre/movie/list');
+// const getGenres = async (url)=> await axiosMovies(urlGeners);
 const getMovie = async (id) => await axiosMovies('/movie/'+ id);
 export {axiosMovies};
