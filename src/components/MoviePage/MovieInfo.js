@@ -1,12 +1,11 @@
 import './MovieListCard.css';
 const MovieInfo = ({movieInfo})=>{
-    console.log(movieInfo);
     return (
         <div>
             <ul>
-                {movieInfo.map(({title, data}) =>(
-                    data && (
-                        <li className={'movieInfo'}>
+                {movieInfo.map(({title, data} , i) =>(
+                     (
+                        <li className={'movieInfo'} key={i}>
                             <span><strong>{title}:</strong> {data}</span>
                         </li>)
                 ))}

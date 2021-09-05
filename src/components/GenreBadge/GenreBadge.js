@@ -1,27 +1,24 @@
+import "./GenreBadge.css";
 import {useEffect, useState} from "react";
-import {axiosMovies} from "../../service/movieService";
 import {urlGeners} from "../../constants/api";
+import {axiosMovies} from "../../service/movieService";
+import {Link} from "react-router-dom";
+import GenresMovie from "./GenresMovie";
 
 export function GenreBadge(){
-//     const getGenres = async (url) =>{
-//         const res = await axiosMovies(url);
-//         console.log(genres);
-//         const genresList = res.data.results.map(({id,name})=>{
-//             return {
-//                 id,
-//                 name,
-//             }
-//         })
-// }
-//     useEffect(()=>{
-//         (async () =>{
-//             const res = await axiosMovies(urlGeners);
-//             console.log(urlGeners, res);
-//         })();
-//     },[]);
+
+    const [genres, setGenres] = useState(null);
+    useEffect(()=>{
+        (async () =>{
+            const res = await axiosMovies(urlGeners);
+            setGenres(res.data.genres);
+        })();
+    },[]);
     return (
         <div>
-            {/*{genres.name}*/}
+            {
+                genres && (<GenresMovie genres={genres} key={genres.id}/>)
+            }
         </div>
     )
 }

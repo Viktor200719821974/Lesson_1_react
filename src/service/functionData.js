@@ -3,6 +3,7 @@ const getUrl = (backdrop_path, category) =>{
 return category + backdrop_path;
 }
 export const getMoviesImage = (backdrop_path)=> getUrl(backdrop_path,urlBaseImage);
+
 const getNextPage = (nextPageNew, category) =>{
     return category + nextPageNew;
 }
