@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import {getGenres} from "../../service/movieService";
+import {axiosMovies} from "../../service/movieService";
+import {urlGeners} from "../../constants/api";
 
 export function GenreBadge(){
-    let [genres, setGenres] = useState([]);
 //     const getGenres = async (url) =>{
 //         const res = await axiosMovies(url);
 //         console.log(genres);
@@ -14,7 +14,10 @@ export function GenreBadge(){
 //         })
 // }
 //     useEffect(()=>{
-//         getGenres().then(value => setGenres([...value]));
+//         (async () =>{
+//             const res = await axiosMovies(urlGeners);
+//             console.log(urlGeners, res);
+//         })();
 //     },[]);
     return (
         <div>

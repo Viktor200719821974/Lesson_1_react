@@ -17,7 +17,6 @@ const MoviesPage = () =>{
         const res = await axiosMovies(url);
 
         // const numberPage = res.data.page;
-        console.log(res);
         // const prevPageNew = numberPage -1;
         // const nextPageNew = numberPage + 1;
         const moviesList = res.data.results.map(({id,title,backdrop_path})=>{

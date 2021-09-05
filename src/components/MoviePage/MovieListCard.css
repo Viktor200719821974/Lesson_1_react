@@ -1,0 +1,18 @@
+.infoConteiner{
+    display: flex;
+}
+.imageInfo{
+    border-radius: 10px;
+    border: 3px solid #6777c9;
+}
+.containerName{
+    text-align: center;
+    font-size: 35px;
+    color: #6a83fb;
+}
+.movieInfo{
+    color: rgb(149, 73, 39);
+    margin: 5px;
+    font-size: 25px;
+    border: #10100e solid 2px;
+}

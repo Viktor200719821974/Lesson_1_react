@@ -7,7 +7,7 @@ const MoviesList = ({movies}) =>{
             <ul className={"list_container"}>
                 {movies.map(({id,title,imageUrl })=>
                     <li className={"list_item"} key={id}>
-                        <Link to={`/movies/${id}`}>
+                        <Link to={`/MoviesPage/${id}`}>
                         <MoviesImage movies={movies} imageUrl={imageUrl} key={id}/>
                         <p>{title}</p>
                         </Link>

@@ -6,7 +6,7 @@
     list-style-type: none;
 }
 .list_item{
-width:220px;
+    width:220px;
     margin: var(--spasing-medium);
     border-radius: var(--border-radius-smail);
     background-color: var(--color-white);
@@ -19,7 +19,7 @@ width:220px;
     text-align: center;
 }
 .movie_poster{
-width: 100%;
+    width: 100%;
     height: 330px;
     object-fit: cover;
     object-position: top center;

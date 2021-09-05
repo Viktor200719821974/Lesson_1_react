@@ -1,6 +1,6 @@
 import MoviesPage from "../containers/MoviePage";
 import HomePage from "../App/HomePage";
-import MovieList from "../components/MoviePage/MovieList";
+import MovieListCard from "../components/MoviePage/MovieListCard";
 const routesConfig = [
     {
         path:'/',
@@ -15,7 +15,7 @@ const routesConfig = [
     {
         path:'/MoviesPage/:id',
         exact: true,
-        component: MovieList
+        component: MovieListCard
     }
 ];
 export default routesConfig;
