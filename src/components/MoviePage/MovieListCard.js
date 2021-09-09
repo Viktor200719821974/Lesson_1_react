@@ -35,7 +35,7 @@ const [movieInfoImage,setMovieInfoImage] = useState(null);
         <div>
             <h2 className={'containerName'}>{movieInfoName}</h2>
         <div className={'infoConteiner'}>
-            <PosterPreview imageInfo={imageInfo} movieInfoName={movieInfoName}/>
+            {movieInfo &&<PosterPreview imageInfo={imageInfo} movieInfoName={movieInfoName} key={movieInfo.id}/>}
             {movieInfo && (<MovieInfo movieInfo={movieInfo} key={movieInfo.id}/> )}
         </div>
         </div>

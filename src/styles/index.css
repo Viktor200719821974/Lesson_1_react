@@ -8,13 +8,14 @@
  --spasing-medium: 20px;
  --font-family-main: sans-serif;
  --theme-default-header: #cccc46;
- --theme-default-film-lopo: url('../static/sky-clouds-texture-background-preview.jpg');
+ /*--theme-default-film-lopo: url('../static/sky-clouds-texture-background-preview.jpg');*/
  --theme-default-background-info: url('../static/sky-clouds-texture-background-preview.jpg');
  --transition: .4s;
  --text-shadow-yellow:
          0 0 2px var(--color-white),
  0 0 40px var(--color-blue);
 --width-max: 1200px;
+ --font-bold: 600px;
 }
 body {
  margin: 0;

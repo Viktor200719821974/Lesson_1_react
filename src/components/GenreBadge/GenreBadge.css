@@ -5,4 +5,11 @@
     list-style-type: none;
     font-size: 25px;
     margin: 10px;
+
+}
+.link_genreBadge{
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    background: rgba(35, 96, 114, 0.4);
 }

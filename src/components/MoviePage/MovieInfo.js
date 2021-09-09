@@ -1,7 +1,9 @@
 import './MovieListCard.css';
+
 const MovieInfo = ({movieInfo})=>{
     return (
         <div>
+
             <ul>
                 {movieInfo.map(({title, data} , i) =>(
                      (
