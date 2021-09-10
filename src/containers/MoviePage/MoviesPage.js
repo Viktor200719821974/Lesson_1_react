@@ -35,19 +35,6 @@ const MoviesPage = () =>{
             setLoading(false);
         })();
     },[currentPage]);
-    // const query = useQueryParams();
-    // const queryPage = query.get('page');
-    // const getMovies = async (url) =>{
-    //
-    //     const res = await axiosMovies(url);
-    //
-    //
-    // }
-    //
-    // useEffect(()=>{
-    //     getMovies(apiMoviesUrl + currentPage);
-    // },[]);
-    // apiMoviesUrl+queryPage
     return (
         <div>
             {moviesPages &&<MovieNavigation setCurrentPage={setCurrentPage} loading={loading} pageCount={pageCount}

@@ -5,18 +5,23 @@ import {apiMovieUrlId} from "../../constants/api";
 import MovieInfo from "./MovieInfo";
 import {getMovieInfoImage} from "../../service/functionData";
 import PosterPreview from "./PosterPreview";
+import {useSelector} from "react-redux";
 
 const MovieListCard = ({match}) => {
 const [movieInfo, setMovieInfo] = useState(null);
 const [movieInfoName, setMovieInfoName] = useState(null);
 const [movieInfoImage,setMovieInfoImage] = useState(null);
 const [movieId, setMovieId] = useState(null);
+    const [movieFavorite, setMovieFavorite] = useState(false);
+
+    const storeData = useSelector(state => state.userInfo);
 
     const imageInfo = getMovieInfoImage(movieInfoImage);
     useEffect(()=>{
         (async () =>{
             const id = match.params.id;
             const res = await axiosMovies(`${apiMovieUrlId}/${id}`);
+            storeData[id] ? setMovieFavorite(true) : setMovieFavorite(false);
             setMovieId(id);
             setMovieInfo([
                 {title: 'Budget', data: res.data.budget},
@@ -38,7 +43,8 @@ const [movieId, setMovieId] = useState(null);
         <div>
             <h2 className={'containerName'}>{movieInfoName}</h2>
         <div className={'infoConteiner'}>
-            {movieInfo &&<PosterPreview imageInfo={imageInfo} movieId={movieId} movieInfoName={movieInfoName} key={movieInfo.id}/>}
+            {movieInfo &&<PosterPreview imageInfo={imageInfo} movieId={movieId} movieInfoName={movieInfoName} key={movieInfo.id}
+                                        setMovieFavorite={setMovieFavorite} movieFavorite={movieFavorite}/>}
             {movieInfo && (<MovieInfo movieInfo={movieInfo} key={movieInfo.id}/> )}
         </div>
         </div>

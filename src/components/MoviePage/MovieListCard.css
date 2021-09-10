@@ -28,5 +28,21 @@ display: inline-flex;
     margin-right: 10px;
     object-fit: cover;
     object-position: center center;
+}
+.image_favorite{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    object-fit: cover;
+    object-position: center center;
+    filter: drop-shadow(0 0 2px #000);
+    cursor: pointer;
+}
 
+.image_container{
+    position: relative;
+    top: 0;
+    left: 0;
 }

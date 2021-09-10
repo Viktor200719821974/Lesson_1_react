@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import './Header.css';
+import UserInfoPage from "../UserInfo/UserInfoPage";
 const Header =() =>{
 
     return (
@@ -9,8 +10,8 @@ const Header =() =>{
                 <li> <NavLink to={'/'} exact>Home</NavLink></li>
                 <li><NavLink to={'/MoviesPage/?page=1'} exact>MoviesPage</NavLink></li>
                 <li><NavLink to={'/GenreBadge'} exact>Genres</NavLink></li>
-                <li><NavLink to={'/Userinfo'} exact>UserInfo</NavLink></li>
             </ul>
+            <UserInfoPage/>
         </div>
 
 
