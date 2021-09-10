@@ -3,7 +3,7 @@ import {useHistory} from "react-router";
 import iconBack from './img/arrow.svg';
 const PosterPreview = ({imageInfo}) => {
     const history = useHistory();
-
+    console.log(imageInfo);
     const handleGoBack = e =>{
         e.preventDefault();
         history.goBack();
