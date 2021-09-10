@@ -1,11 +1,11 @@
 import {useSelector} from "react-redux";
 
-const GenresInfo = ()=>{
+const UserInfo = ()=>{
     const storeData = useSelector(state => state.moviesReducer);
     return (
         <div>
-<h1>Favorite Page</h1>
+            <h1>Favorite Page</h1>
         </div>
     )
 }
-export default GenresInfo;
+export default UserInfo;
