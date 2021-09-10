@@ -10,11 +10,14 @@ const MovieListCard = ({match}) => {
 const [movieInfo, setMovieInfo] = useState(null);
 const [movieInfoName, setMovieInfoName] = useState(null);
 const [movieInfoImage,setMovieInfoImage] = useState(null);
+const [movieId, setMovieId] = useState(null);
+
     const imageInfo = getMovieInfoImage(movieInfoImage);
     useEffect(()=>{
         (async () =>{
             const id = match.params.id;
             const res = await axiosMovies(`${apiMovieUrlId}/${id}`);
+            setMovieId(id);
             setMovieInfo([
                 {title: 'Budget', data: res.data.budget},
                 {title: 'Release Date', data: res.data.release_date},
@@ -35,7 +38,7 @@ const [movieInfoImage,setMovieInfoImage] = useState(null);
         <div>
             <h2 className={'containerName'}>{movieInfoName}</h2>
         <div className={'infoConteiner'}>
-            {movieInfo &&<PosterPreview imageInfo={imageInfo} movieInfoName={movieInfoName} key={movieInfo.id}/>}
+            {movieInfo &&<PosterPreview imageInfo={imageInfo} movieId={movieId} movieInfoName={movieInfoName} key={movieInfo.id}/>}
             {movieInfo && (<MovieInfo movieInfo={movieInfo} key={movieInfo.id}/> )}
         </div>
         </div>

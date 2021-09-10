@@ -8,7 +8,7 @@ export function GenreBadge(){
 
     const [genres, setGenres] = useState(null);
     const [idGenres, setIdGenres] = useState(null);
-    console.log(idGenres);
+
     useEffect(()=>{
         (async () =>{
             const res = await axiosMovies(urlGeners);

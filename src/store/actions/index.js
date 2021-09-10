@@ -7,11 +7,11 @@ export const setGenresRedux = () =>({
     type: ADD_GENRES,
     payload: ''
 })
-export const setMovieToFavorite = () =>({
+export const setMovieToFavorite = movie =>({
     type: ADD_MOVIE_TO_FAVORITE,
-    payload: ''
+    payload: movie
 })
-export const removeMovieFromFavorite = () =>({
+export const removeMovieFromFavorite = movieId =>({
     type: REMOVE_MOVIE_TO_FAVORITE,
-    payload: ''
+    payload: movieId
 })

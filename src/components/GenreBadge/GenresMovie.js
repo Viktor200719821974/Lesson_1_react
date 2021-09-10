@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import {axiosMovies} from "../../service/movieService";
 import {apiUrlMovies} from "../../constants/api";
 import {Link} from "react-router-dom";
-import GenresInfo from "./GenresInfo";
 import {useDispatch} from "react-redux";
 import moviesReducer from "../../store/reducers/moviesReducer";
 import genresReducer from "../../store/reducers/genresReducer";
@@ -45,9 +44,6 @@ const dispatch = useDispatch();
                            // ))
                         }
                     </ul>
-
-<GenresInfo/>
-
 
                 </div>
             )
