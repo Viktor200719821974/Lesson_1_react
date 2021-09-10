@@ -3,7 +3,7 @@ import HomePage from "../App/HomePage";
 import MovieListCard from "../components/MoviePage/MovieListCard";
 import {GenreBadge} from "../components/GenreBadge/GenreBadge";
 import GenresMovie from "../components/GenreBadge/GenresMovie";
-import UserInfoPage from "../containers/MoviePage/UserInfo";
+import UserInfoPage from "../components/UserInfo/UserInfo";
 const routesConfig = [
     {
         path:'/',

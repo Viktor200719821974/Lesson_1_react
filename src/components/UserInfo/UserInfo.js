@@ -1,6 +1,6 @@
 import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import MoviesList from "../../components/MoviePage";
+import MoviesList from "../MoviePage";
 
 const UserInfo = ()=>{
     const storeData = useSelector(state => state.userInfo);

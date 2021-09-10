@@ -38,7 +38,7 @@ const MoviesPage = () =>{
     return (
         <div>
             {moviesPages &&<MovieNavigation setCurrentPage={setCurrentPage} loading={loading} pageCount={pageCount}
-                                            currentPage={currentPage} key={moviesPages.id}
+                                            currentPage={currentPage} key={movies.id}
                                             maxPageNumberLimit={ maxPageNumberLimit} minPageNumberLimit={minPageNumberLimit}
                                             pageNumberLimit={pageNumberLimit} setMaxPageNumberLimit={setMaxPageNumberLimit} setMinPageNumberLimit={setMinPageNumberLimit}/>}
             {movies && <MoviesList movies={movies} key={movies.id}/>}

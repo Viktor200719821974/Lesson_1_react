@@ -14,7 +14,7 @@ const UserInfoPage = () =>{
     });
     return (
         <div className={'container_userInfo'}>
-         <Link to={'/Userinfo'} >
+         <Link to={'/UserInfo'} >
              <span className={'counter'}>{count}</span>
              <img className={'icon'} src={icon} alt="Favorite movies"/>
          </Link>
