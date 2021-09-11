@@ -28,4 +28,5 @@ text-decoration: none;
 }
 .link__item{
     list-style-type: none;
+    text-align: center;
 }

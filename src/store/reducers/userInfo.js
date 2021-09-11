@@ -1,7 +1,8 @@
 import {ADD_MOVIE_TO_FAVORITE, REMOVE_MOVIE_TO_FAVORITE} from "../constans/actionsTypes";
 import {omit} from 'lodash';
+import {getLocalStarage} from "../localStorage/localStorage";
 
-const initialState = {};
+const initialState = getLocalStarage('store');
 const userInfo = (state =initialState , action)=>{
     switch (action.type){
         case ADD_MOVIE_TO_FAVORITE:
