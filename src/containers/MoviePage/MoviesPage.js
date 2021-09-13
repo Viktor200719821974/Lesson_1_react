@@ -14,7 +14,7 @@ const MoviesPage = () =>{
     const [pageNumberLimit] = useState(20);
     const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(20);
     const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-
+const [vote, setVote] = useState(null);
     useEffect(()=> {
         (async () => {
             setLoading(true);
@@ -25,18 +25,21 @@ const MoviesPage = () =>{
                     id,
                     title,
                     backdrop_path,
-                    imageUrl
+                    imageUrl,
+
                 }
             })
             setMovies(moviesList);
             setMoviesPages(res.data);
             setCurrentPage(res.data.page);
             setPageCount(res.data.total_pages);
+            setVote(res.data.vote_average)
             setLoading(false);
         })();
     },[currentPage]);
     return (
         <div>
+            {/*<Badge badgeContent={vote}/>*/}
             {moviesPages &&<MovieNavigation setCurrentPage={setCurrentPage} loading={loading} pageCount={pageCount}
                                             currentPage={currentPage} key={movies.id}
                                             maxPageNumberLimit={ maxPageNumberLimit} minPageNumberLimit={minPageNumberLimit}

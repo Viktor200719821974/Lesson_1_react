@@ -2,9 +2,9 @@ import {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
 import './Header.css';
 import UserInfoPage from "../UserInfo/UserInfoPage";
-import imgLight from './image/light.svg';
-import imgDark from './image/dark.svg';
-import imgNeitral from './image/neitral.svg';
+import imgLight from './image/light.jpg';
+import imgDark from './image/dark.png';
+import imgNeitral from './image/neitral.jpg';
 import {useTheme} from "../../context/ThemeProvider";
 import {THEME_DARK, THEME_LIGHT, THEME_NEITRAL} from "../../constants/api";
 

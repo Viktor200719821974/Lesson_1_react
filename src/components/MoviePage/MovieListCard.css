@@ -1,6 +1,5 @@
 .infoConteiner{
     display: flex;
-    /*background-image: var(--theme-default-background-info);*/
 }
 
 .containerName{

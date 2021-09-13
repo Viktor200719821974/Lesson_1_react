@@ -3,24 +3,25 @@
  --color-black: #000;
  --color-blue: #6a83fb;
  --color-dark-grey: #10100e;
- --color-violet: #402249;
+ --color-violet: #454922;
  --border-radius-smail: 3px;
  --spasing-medium: 20px;
  --font-family-main: sans-serif;
- --theme-default-header: var(--theme-neitral-header);
 
+ --theme-default-header: var(--theme-neitral-header);
  --theme-light-header: #dfe2df;
  --theme-dark-header: #ca6c6f;
  --theme-neitral-header: #cccc46;
+
 --color-light: #29e52d;
  --color-dark: #d82228;
- --color-neitral: #ffff00;
+ --color-neitral: #100e10;
  --color-shadow-light: rgba(41, 229, 45,.4);
  --color-shadow-dark: rgba(216, 34, 40, .4);
  --color-shadow-neitral: rgba(224, 224, 81, .4);
- /*--theme-default-film-lopo: url('../static/sky-clouds-texture-background-preview.jpg');*/
+/*linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);*/
  --theme-default-background: var(--theme-neitral-background);
- --theme-light-background: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+ --theme-light-background: linear-gradient(to left bottom, #61b064, #7fb763, #9abe64, #b4c468, #cdca6e);
  --theme-dark-background:  linear-gradient(to right top, #120537, #170d60, #1d108c, #2112ba, #2512eb);
  --theme-neitral-background: url('../static/sky-clouds-texture-background-preview.jpg');
 

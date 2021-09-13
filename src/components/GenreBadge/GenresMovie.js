@@ -2,22 +2,18 @@ import {useEffect, useState} from "react";
 import {axiosMovies} from "../../service/movieService";
 import {apiUrlMovies} from "../../constants/api";
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import moviesReducer from "../../store/reducers/moviesReducer";
-import genresReducer from "../../store/reducers/genresReducer";
+
 
 
 const GenresMovie = ({genres}) =>{
     const [movies, setMovies] = useState(null);
-    const [genreId, setGenreId] = useState(null);
-const dispatch = useDispatch();
-    // dispatch(moviesReducer({movies}));
-    // dispatch(genresReducer({genres}));
+    const [selectedGenres, setSelectedGenres] = useState([]);
+
     useEffect(()=> {
         (async () => {
             const res = await axiosMovies(apiUrlMovies);
            setMovies(res.data.results);
-           setGenreId(res.data.results.genre_ids);
+
         })();
     },[]);
             return (

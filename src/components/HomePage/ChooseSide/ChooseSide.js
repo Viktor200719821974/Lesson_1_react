@@ -1,5 +1,5 @@
 import {useTheme} from "../../../context/ThemeProvider";
-import {PropTypes} from "react";
+import PropTypes from 'prop-types';
 import "./ChooseSide.css";
 import cn from 'classnames';
 import {THEME_DARK, THEME_LIGHT, THEME_NEITRAL} from "../../../constants/api";
@@ -22,18 +22,19 @@ const ChooseSideItem = ({
         </div>
     )
 }
-   // ChooseSideItem.propTypes = {
-   //  theme: PropTypes.string,
-   //     text: PropTypes.string,
-   //     img: PropTypes.string,
-   // }
+   ChooseSideItem.propTypes = {
+    theme: PropTypes.string,
+       text: PropTypes.string,
+       img: PropTypes.string,
+       classes: PropTypes.string,
+   }
 
 const ChooseSide = () =>{
 const elements = [
     {
         classes: 'item_light',
         theme: THEME_LIGHT,
-        text: "Lite Side",
+        text: "Lighte Side",
         img: imgLight
     },
     {
