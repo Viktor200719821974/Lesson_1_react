@@ -7,10 +7,11 @@ const MoviesList = ({movies, loading}) =>{
     return (
         <div>
             <ul className={"list_container"}>
-                {movies.map(({id,title,imageUrl })=>
+                {movies.map(({id,title,imageUrl,vote_average })=>
                     <li className={"list_item"} key={id}>
                         <Link   to={`/MoviesPage/${id}`}>
-                        <MoviesImage movies={movies} imageUrl={imageUrl} key={id}/>
+                        <MoviesImage title={title} vote_average={vote_average} imageUrl={imageUrl} key={id}/>
+
                         <p className={'link__item'}><b>{title}</b></p>
                         </Link>
                     </li>

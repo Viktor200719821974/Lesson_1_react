@@ -28,16 +28,7 @@ const GenresMovie = ({genres}) =>{
                                     </Link>
                                 </li>
                             ))
-                           // (movies && movies.map(({genres_ids}) =>{
-                           //         for (const genres_idsElement of genres_ids) {
-                           //             console.log(genres_idsElement);
-                           //         }
-                           // //  const sorter = movies.sort(({id ,genres_ids})=>
-                           // //      (id === genres_ids));
-                           // //  return sorter;
-                           // //         console.log(sorter);
-                           //     }
-                           // ))
+
                         }
                     </ul>
 
