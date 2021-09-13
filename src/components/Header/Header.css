@@ -21,7 +21,7 @@ list-style-type: none;
     text-align: center;
     font-family:var(--font-family-main);
     text-decoration: none;
-    text-weight: 600;
+    text-weight: var(--font-bold);
     text-shadow: var(--text-shadow-yellow);
     transition: var(--transition);
 }
@@ -29,4 +29,11 @@ list-style-type: none;
     border:2px solid var(--color-violet);
     color: var(--color-violet);
     text-shadow: none;
+}
+.logo{
+width: 60px;
+    height: 60px;
+    margin-right: 30px;
+    object-fit: cover;
+    object-position: center center;
 }

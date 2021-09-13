@@ -25,6 +25,7 @@ text-decoration: none;
     object-fit: cover;
     object-position: top center;
     border-radius: 3px 3px 0 0;
+
 }
 .link__item{
     list-style-type: none;
