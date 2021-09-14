@@ -4,6 +4,7 @@ import {apiMoviesUrl} from "../../constants/api";
 import {axiosMovies} from "../../service/movieService";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import {GenreBadge} from "../../components/GenreBadge/GenreBadge";
+import useGenres from "../../hooks/useGenres";
 
 const MoviesPage = () =>{
     const [page, setPage] = useState(1);
@@ -12,16 +13,17 @@ const MoviesPage = () =>{
     const [content, setContent] = useState([]);
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [genres, setGenres]= useState([]);
+    const genreForUrl = useGenres(selectedGenres);
     useEffect(()=> {
         (async () => {
             setLoading(true);
-            const res = await axiosMovies(apiMoviesUrl + page);
+            const res = await axiosMovies(apiMoviesUrl + page + genreForUrl);
 
             setContent(res.data.results);
             setNumberOfPages(res.data.total_pages);
             setLoading(false);
         })();
-    },[page]);
+    },[page,genreForUrl]);
     return (
         <div>
             <GenreBadge
@@ -29,7 +31,7 @@ const MoviesPage = () =>{
                 selectedGenres={selectedGenres}
                 genres={genres}
                 setGenres={setGenres}
-                setSelectedgenres={setSelectedGenres}
+                setSelectedGenres={setSelectedGenres}
                 setPage={setPage}
             />
         <div className={'main_container'}>

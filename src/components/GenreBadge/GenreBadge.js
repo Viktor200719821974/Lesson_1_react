@@ -23,12 +23,13 @@ const getGenres = async () => {
     const {data} = await axiosMovies(apiBaseUrl+ `/genre/${type}/list`);
     setGenres(data.genres);
 };
-    useEffect(()=>{
-          getGenres();
-        return ()=>{
+    useEffect(() => {
+        getGenres();
+        return () => {
             setGenres({});
-        }
-    },[]);
+        };
+//eslint-dsable-next-line
+    }, []);
     return (
         <div style={{padding: "6px 0"}}>
             {selectedGenres && selectedGenres.map((genre) => (
@@ -46,7 +47,7 @@ const getGenres = async () => {
                 <Chip
                     label={genre.name}
                     style={{margin: 2}}
-                    size='small'
+                    size="small"
                     key={genre.id}
                     clickable
                     onClick={()=> handleAdd(genre)}
