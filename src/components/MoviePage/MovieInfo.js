@@ -1,7 +1,10 @@
 import './MovieListCard.css';
+import {useState} from "react";
+import StarsRating from "./StarsRating";
 
 const MovieInfo = ({movieInfo})=>{
-    console.log(movieInfo);
+    const [rating, setRating] = useState(0);
+
     return (
         <div>
 
@@ -13,6 +16,7 @@ const MovieInfo = ({movieInfo})=>{
                         </li>)
                 ))}
             </ul>
+            <StarsRating rating={rating} onRating={(rate) => setRating(rate)} />
         </div>
     )
 }

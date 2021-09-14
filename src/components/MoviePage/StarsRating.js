@@ -30,6 +30,7 @@ const StarsRating = ({count, rating, color, onRating}) => {
     },[count, rating, hoverRating])
     return (
         <div>
+            rating
             {starRating}
         </div>
     )
