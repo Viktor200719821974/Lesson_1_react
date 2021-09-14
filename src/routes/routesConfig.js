@@ -1,8 +1,6 @@
 import MoviesPage from "../containers/MoviePage";
-import HomePage from "../App/HomePage";
+import HomePage from "../components/HomePage/HomePage";
 import MovieListCard from "../components/MoviePage/MovieListCard";
-import {GenreBadge} from "../components/GenreBadge/GenreBadge";
-import GenresMovie from "../components/GenreBadge/GenresMovie";
 import UserInfoPage from "../components/UserInfo/UserInfo";
 const routesConfig = [
     {
@@ -19,16 +17,6 @@ const routesConfig = [
         path:'/MoviesPage/:id',
         exact: true,
         component: MovieListCard
-    },
-    {
-        path:'/GenreBadge',
-        exact: true,
-        component: GenreBadge
-    },
-    {
-        path:'/GenresMovie',
-        exact: true,
-        component: GenresMovie
     },
     {
         path:'/UserInfo',

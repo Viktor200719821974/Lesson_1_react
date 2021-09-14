@@ -1,10 +1,11 @@
 import Pagination from "@material-ui/lab/Pagination";
 
 
-const CustomPagination = ({setPage, numberOfPages, loading}) => {
+const CustomPagination = ({setPage, numOfPages, loading}) => {
     const handlePageChange = (page) => {
         setPage(page);
         window.scroll(0, 0);
+        console.log(page);
     }
     if(loading) {
         return <h2>Loading...</h2>
@@ -16,10 +17,10 @@ const CustomPagination = ({setPage, numberOfPages, loading}) => {
             justifyContent: "center",
             marginTop: 10,
         }}>
-            <Pagination count={numberOfPages}
+            <Pagination count={numOfPages}
                         onChange={(e) => handlePageChange(e.target.textContent)}
-                       hideNextButton
-                        hidePrevButton
+                       // hideNextButton
+                       //  hidePrevButton
                         color= "primary"
             />
         </div>

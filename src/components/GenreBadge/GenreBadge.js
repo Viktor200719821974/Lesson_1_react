@@ -1,6 +1,5 @@
-import "./GenreBadge.css";
-import {useEffect, useState} from "react";
-import {apiBaseUrl, urlGeners} from "../../constants/api";
+import {useEffect} from "react";
+import {apiBaseUrl} from "../../constants/api";
 import {axiosMovies} from "../../service/movieService";
 import {Chip} from "@material-ui/core";
 
@@ -28,7 +27,7 @@ const getGenres = async () => {
         return () => {
             setGenres({});
         };
-//eslint-dsable-next-line
+// eslint-disable-next-line
     }, []);
     return (
         <div style={{padding: "6px 0"}}>

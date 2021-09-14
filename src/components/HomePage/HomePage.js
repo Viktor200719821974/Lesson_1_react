@@ -1,4 +1,4 @@
-import ChooseSide from "../components/HomePage/ChooseSide/ChooseSide";
+import ChooseSide from "./ChooseSide/ChooseSide";
 
 const HomePage =() =>{
 

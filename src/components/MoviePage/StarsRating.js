@@ -1,35 +1,55 @@
-// const Star = ({ marked, starId }) => {
-//     return (
-//         <span data-star-id={starId} className="star" role="button">
-//       {marked ? '\u2605' : '\u2606'}
-//     </span>
-//     );
-// };
-//
-// const StarRating = ({ value }) => {
-//     const [rating, setRating] = React.useState(parseInt(value) || 0);
-//     const [selection, setSelection] = React.useState(0);
-//
-//     const hoverOver = event => {
-//         let val = 0;
-//         if (event && event.target && event.target.getAttribute('data-star-id'))
-//             val = event.target.getAttribute('data-star-id');
-//         setSelection(val);
-//     };
-//     return (
-//         <div
-//             onMouseOut={() => hoverOver(null)}
-//             onClick={e => setRating(e.target.getAttribute('data-star-id') || rating)}
-//             onMouseOver={hoverOver}
-//         >
-//             {Array.from({ length: 5 }, (v, i) => (
-//                 <Star
-//                     starId={i + 1}
-//                     key={`star_${i + 1}`}
-//                     marked={selection ? selection >= i + 1 : rating >= i + 1}
-//                 />
-//             ))}
-//         </div>
-//     );
-// };
-// ReactDOM.render(<StarRating value={2} />, document.getElementById('root'));
+import React, {useMemo, useState} from "react";
+import Proptypes from "prop-types";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+const StarsRating = ({count, rating, color, onRating}) => {
+    const [hoverRating, setHoverRating] = useState(0);
+
+    const getColor = index => {
+     if(hoverRating >= index){
+         return color.filled;
+     }else if(!hoverRating && rating >= index){
+        return color.filled;
+     }
+     return color.unfilled;
+    }
+    const starRating = useMemo(()=>{
+        return Array(count)
+            .fill(0)
+            .map((_, i ) => i + 1)
+            .map(idx => (
+                <FontAwesomeIcon
+                    key={idx}
+                    className="cursor-pointer"
+                    icon="star"
+                    onClick={()=> onRating({idx})}
+                    style={{color: getColor(idx)}}
+                    onMouseEnter={()=> setHoverRating(idx)}
+                    onMouseLeave={()=>setHoverRating(0)}
+                    />
+            ));
+    },[count, rating, hoverRating])
+    return (
+        <div>
+            {starRating}
+        </div>
+    )
+}
+StarsRating.propTypes = {
+   count: Proptypes.number,
+    rating: Proptypes.number,
+    onChange: Proptypes.func,
+    color: {
+       filled: Proptypes.string,
+        unfilled: Proptypes.string
+    }
+}
+StarsRating.defaultProps = {
+    count: 5,
+    rating: 0,
+    color: {
+        filled: "#F5eb3b",
+        unfilled: "#DCDCDC"
+    }
+}
+
+export default StarsRating;

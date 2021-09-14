@@ -1,6 +1,7 @@
 import './MovieListCard.css';
 
 const MovieInfo = ({movieInfo})=>{
+    console.log(movieInfo);
     return (
         <div>
 
