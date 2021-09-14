@@ -1,50 +1,52 @@
 import {useEffect, useState} from "react";
 import MoviesList from "../../components/MoviePage";
-import MovieNavigation from "./MovieNavigation/MovieNavigation";
-import { getMoviesImage} from "../../service/functionData";
 import {apiMoviesUrl} from "../../constants/api";
 import {axiosMovies} from "../../service/movieService";
+import CustomPagination from "../../components/Pagination/CustomPagination";
+import {GenreBadge} from "../../components/GenreBadge/GenreBadge";
 
 const MoviesPage = () =>{
-    const [movies, setMovies] = useState(null);
-    const [moviesPages, setMoviesPages] = useState(null);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
-    const [pageCount, setPageCount] = useState(null);
-    const [pageNumberLimit] = useState(20);
-    const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(20);
-    const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-
+    const [numberOfPages, setNumberOfPages] = useState();
+    const [content, setContent] = useState([]);
+    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [genres, setGenres]= useState([]);
     useEffect(()=> {
         (async () => {
             setLoading(true);
-            const res = await axiosMovies(apiMoviesUrl + currentPage);
+            const res = await axiosMovies(apiMoviesUrl + page);
 
-            const moviesList = res.data.results.map(({id,title,backdrop_path, vote_average})=>{
-                const imageUrl = getMoviesImage(backdrop_path);
-                return {
-                    id,
-                    title,
-                    backdrop_path,
-                    vote_average,
-                    imageUrl,
-                }
-            })
-            setMovies(moviesList);
-            setMoviesPages(res.data);
-            setCurrentPage(res.data.page);
-            setPageCount(res.data.total_pages);
+            setContent(res.data.results);
+            setNumberOfPages(res.data.total_pages);
             setLoading(false);
         })();
-    },[currentPage]);
+    },[page]);
     return (
         <div>
-
-            {moviesPages &&<MovieNavigation setCurrentPage={setCurrentPage} loading={loading} pageCount={pageCount}
-                                            currentPage={currentPage} key={movies.id}
-                                            maxPageNumberLimit={ maxPageNumberLimit} minPageNumberLimit={minPageNumberLimit}
-                                            pageNumberLimit={pageNumberLimit} setMaxPageNumberLimit={setMaxPageNumberLimit} setMinPageNumberLimit={setMinPageNumberLimit}/>}
-            {movies && <MoviesList movies={movies} key={movies.id}/>}
+            <GenreBadge
+                type="movie"
+                selectedGenres={selectedGenres}
+                genres={genres}
+                setGenres={setGenres}
+                setSelectedgenres={setSelectedGenres}
+                setPage={setPage}
+            />
+        <div className={'main_container'}>
+            {content && content.map((c)=> (
+                <MoviesList
+                key={c.id}
+                id={c.id}
+                poster={c.poster_path || c.backdrop_path}
+                title={c.title || c.name}
+                date={c.first_air_date || c.release_date}
+                media_type= "movie"
+                vote_average={c.vote_average}
+                backdrop_path={c.backdrop_path || c.poster_path}
+                />
+            ))}
+            { numberOfPages >1 && (<CustomPagination setPage={setPage} numberOfPages={numberOfPages} loading={loading}/>)}
+        </div>
         </div>
     )
 }

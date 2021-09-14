@@ -23,12 +23,12 @@ if (arr.length){
         <div>
             <h1 className="header_text">User Info</h1>
             <ul className={"list_container"}>
-            {movies.map(({id,name,img}) => {
+            {movies.map(({id,title,img}) => {
                 return(
                     <li className={"list_item"} key={id}>
                         <Link   to={`/MoviesPage/${id}`}>
-                    <img className={"movie_poster"} src={img} alt={name}/>
-                        <p className={'link__item'}><b>{name}</b></p>
+                    <img className={"movie_poster"} src={img} alt={title}/>
+                        <p className={'link__item'}><b>{title}</b></p>
                         </Link>
                     </li>)
                 })

@@ -1,13 +1,14 @@
 import './MoviesList.css';
 import MoviesImage from "./MoviesImage";
 import {Link} from "react-router-dom";
-const MoviesList = ({movies, loading}) =>{
-    if(loading){
-        return <h2>Loading...</h2>}
+import {getMoviesImage} from "../../service/functionData";
+const MoviesList = ({id,poster,title,date,media_type,vote_average,backdrop_path }) =>{
+    const imageUrl = getMoviesImage(poster);
+
     return (
-        <div>
-            <ul className={"list_container"}>
-                {movies.map(({id,title,imageUrl,vote_average })=>
+        <div >
+            <ul>
+                {/*{movies.map(({id,title,imageUrl,vote_average })=>*/}
                     <li className={"list_item"} key={id}>
                         <Link   to={`/MoviesPage/${id}`}>
                         <MoviesImage title={title} vote_average={vote_average} imageUrl={imageUrl} key={id}/>
@@ -15,7 +16,7 @@ const MoviesList = ({movies, loading}) =>{
                         <p className={'link__item'}><b>{title}</b></p>
                         </Link>
                     </li>
-                )}
+                {/*)}*/}
             </ul>
 
         </div>
