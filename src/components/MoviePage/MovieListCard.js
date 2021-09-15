@@ -13,7 +13,7 @@ const [movieInfoName, setMovieInfoName] = useState(null);
 const [movieInfoImage,setMovieInfoImage] = useState(null);
 const [movieId, setMovieId] = useState(null);
     const [movieFavorite, setMovieFavorite] = useState(false);
-
+const [rating, setRating] = useState();
     const storeData = useSelector(state => state.userInfo);
 
     const imageInfo = getMovieInfoImage(movieInfoImage);
@@ -23,6 +23,7 @@ const [movieId, setMovieId] = useState(null);
             const res = await axiosMovies(`${apiMovieUrlId}/${id}`);
             storeData[id] ? setMovieFavorite(true) : setMovieFavorite(false);
             setMovieId(id);
+            setRating(res.data.vote_average);
             setMovieInfo([
                 {title: 'Budget', data: res.data.budget},
                 {title: 'Release Date', data: res.data.release_date},
@@ -32,7 +33,7 @@ const [movieId, setMovieId] = useState(null);
                 {title: 'Revenue', data: res.data.revenue},
                 {title: 'Runtime', data: res.data.runtime},
                 {title: 'Tagline', data: res.data.tagline},
-                {title: 'Vote Average', data: res.data.vote_average},
+                // {title: 'Vote Average', data: res.data.vote_average},
                 {title: 'Vote Count', data: res.data.vote_count}
             ]);
             setMovieInfoName(res.data.title);
@@ -45,7 +46,7 @@ const [movieId, setMovieId] = useState(null);
         <div className={'infoConteiner'}>
             {movieInfo &&<PosterPreview imageInfo={imageInfo} movieId={movieId} movieInfoName={movieInfoName} key={movieInfo.id}
                                         setMovieFavorite={setMovieFavorite} movieFavorite={movieFavorite}/>}
-            {movieInfo && (<MovieInfo movieInfo={movieInfo} key={movieInfo.id}/> )}
+            {movieInfo && (<MovieInfo movieInfo={movieInfo} key={movieInfo.id} rating={rating}/> )}
         </div>
         </div>
     )

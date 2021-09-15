@@ -19,8 +19,7 @@ const CustomPagination = ({setPage, numOfPages, loading}) => {
         }}>
             <Pagination count={numOfPages}
                         onChange={(e) => handlePageChange(e.target.textContent)}
-                       // hideNextButton
-                       //  hidePrevButton
+                        showFirstButton showLastButton
                         color= "primary"
             />
         </div>

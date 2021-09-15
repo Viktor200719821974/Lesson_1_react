@@ -1,11 +1,7 @@
 import './MovieListCard.css';
-import {useState} from "react";
 import StarsRating from "./StarsRating";
-import HoverRating from "./HoverRating";
 
-const MovieInfo = ({movieInfo})=>{
-    // const [rating, setRating] = useState(0);
-
+const MovieInfo = ({movieInfo, rating})=>{
     return (
         <div>
 
@@ -17,8 +13,7 @@ const MovieInfo = ({movieInfo})=>{
                         </li>)
                 ))}
             </ul>
-            {/*<StarsRating rating={rating} onRating={(rate) => setRating(rate)} />*/}
-            <HoverRating/>
+            <StarsRating rating={rating}/>
         </div>
     )
 }

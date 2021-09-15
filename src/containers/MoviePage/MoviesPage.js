@@ -5,7 +5,6 @@ import {axiosMovies} from "../../service/movieService";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import {GenreBadge} from "../../components/GenreBadge/GenreBadge";
 import useGenres from "../../hooks/useGenres";
-// import Navigation from "./navigation/Navigation";
 
 const MoviesPage = () =>{
     const [page, setPage] = useState(1);
@@ -14,11 +13,6 @@ const MoviesPage = () =>{
     const [movies, setMovies] = useState([]);
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [genres, setGenres]= useState([]);
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [pageCount, setPageCount] = useState(null);
-    // const [pageNumberLimit] = useState(20);
-    // const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(20);
-    // const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
     const genreForUrl = useGenres(selectedGenres);
     useEffect(()=> {
         (async () => {
@@ -27,8 +21,6 @@ const MoviesPage = () =>{
 
             setMovies(res.data.results);
             setNumOfPages(res.data.total_pages);
-            // setPage(res.data.page);
-            // setPageCount(res.data.total_pages);
             setLoading(false);
         })();
     },[page,genreForUrl]);
@@ -56,17 +48,6 @@ const MoviesPage = () =>{
                 />
             ))}
             { numOfPages >1 && (<CustomPagination setPage={setPage} numOfPages={numOfPages} loading={loading}/>)}
-            {/*<Navigation*/}
-            {/*    setcurrentPage={setPage}*/}
-            {/*    loading={loading}*/}
-            {/*    pageCount={pageCount}*/}
-            {/*    currentPage={page}*/}
-            {/*    maxPageNumberLimit={maxPageNumberLimit}*/}
-            {/*    minPageNumberLimit={minPageNumberLimit}*/}
-            {/*    pageNumberLimit={pageNumberLimit}*/}
-            {/*    setMaxPageNumberLimit={setMaxPageNumberLimit()}*/}
-            {/*    setMinPageNumberLimit={setMinPageNumberLimit()}*/}
-            {/*/>*/}
         </div>
         </div>
     )

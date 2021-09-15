@@ -1,57 +1,64 @@
-// import React, {useMemo, useState} from "react";
-// import Proptypes from "prop-types";
-// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-// import {star} from '@fortawesome/free-solid-svg-icons';
-// const StarsRating = ({count, rating, color, onRating}) => {
-//     // const [hoverRating, setHoverRating] = useState(0);
-//     //
-//     // const getColor = index => {
-//     //  if(hoverRating >= index){
-//     //      return color.filled;
-//     //  }else if(!hoverRating && rating >= index){
-//     //     return color.filled;
-//     //  }
-//     //  return color.unfilled;
-//     // }
-//     // const starRating = useMemo(()=>{
-//     //     return Array(count)
-//     //         .fill(0)
-//     //         .map((_, i ) => i + 1)
-//     //         .map(idx => (
-//                 <FontAwesomeIcon
-//                     // key={idx}
-//                     className="cursor-pointer"
-//                     icon="star"
-//                     // onClick={()=> onRating({idx})}
-//                     // style={{color: getColor(idx)}}
-//                     // onMouseEnter={()=> setHoverRating(idx)}
-//                     // onMouseLeave={()=>setHoverRating(0)}
-//                     />
-//             // ));
-//     // },[count, rating, hoverRating])
-//     return (
-//         <div>
-//             rating
-//             {/*{starRating}*/}
-//         </div>
-//     )
-// }
-// StarsRating.propTypes = {
-//    count: Proptypes.number,
-//     rating: Proptypes.number,
-//     onChange: Proptypes.func,
-//     color: {
-//        filled: Proptypes.string,
-//         unfilled: Proptypes.string
-//     }
-// }
-// StarsRating.defaultProps = {
-//     count: 5,
-//     rating: 0,
-//     color: {
-//         filled: "#F5eb3b",
-//         unfilled: "#DCDCDC"
-//     }
-// }
-//
-// export default StarsRating;
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Rating from '@material-ui/lab/Rating';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
+import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
+import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
+import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+
+const StyledRating = withStyles({
+    iconFilled: {
+        color: '#ff6d75',
+    },
+    iconHover: {
+        color: '#ff3d47',
+    },
+})(Rating);
+
+const customIcons = {
+    1: {
+        icon: <SentimentVeryDissatisfiedIcon />,
+        label: 'Very Dissatisfied',
+    },
+    2: {
+        icon: <SentimentDissatisfiedIcon />,
+        label: 'Dissatisfied',
+    },
+    3: {
+        icon: <SentimentSatisfiedIcon />,
+        label: 'Neutral',
+    },
+    4: {
+        icon: <SentimentSatisfiedAltIcon />,
+        label: 'Satisfied',
+    },
+    5: {
+        icon: <SentimentVerySatisfiedIcon />,
+        label: 'Very Satisfied',
+    },
+};
+
+function IconContainer(props) {
+    const { value, ...other } = props;
+    return <span {...other}>{customIcons[value].icon}</span>;
+}
+
+IconContainer.propTypes = {
+    value: PropTypes.number.isRequired,
+};
+
+export default function CustomizedRatings({rating}) {
+    return (
+        <div>
+            <Box component="fieldset" mb={3} borderColor="transparent">
+                <Typography component="legend"><h3>Vote Average</h3></Typography>
+                <Rating name="customized-10" defaultValue={rating} max={10} />
+            </Box>
+
+        </div>
+    );
+}
