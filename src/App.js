@@ -8,8 +8,9 @@ function App() {
       <>
         <Header/>
     <div className={'app'}>
-      <SimpleBottomNavigation/>
+fghgfd
     </div>
+      <SimpleBottomNavigation/>
       </>
   );
 }
