@@ -1,4 +1,4 @@
-import  React from 'react';
+import React, {useEffect} from 'react';
 import './MenNav.css';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -7,11 +7,23 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import TvIcon from '@mui/icons-material/Tv';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import MovieIcon from '@mui/icons-material/Movie';
+import {useHistory} from "react-router";
 
 export default function SimpleBottomNavigation() {
 
     const [value, setValue] = React.useState(0);
-
+const history = useHistory();
+    useEffect(()=>{
+        if(value === 0){
+            history.push("/");
+        }else if(value === 1){
+            history.push("/movies");
+        }else if(value === 2){
+            history.push("/series");
+        }else if(value === 3){
+            history.push("/favorite");
+        }
+    },[value, history]);
     return (
         <Box sx={{ width: 500}}>
             <BottomNavigation

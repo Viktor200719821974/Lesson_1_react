@@ -1,6 +1,7 @@
 const Favorite = () => {
     return (
         <>
+            <span className={'pageTitle'}>Favorite</span>
         </>
     )
 }

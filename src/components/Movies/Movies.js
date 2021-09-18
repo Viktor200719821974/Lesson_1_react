@@ -1,6 +1,7 @@
 const Movies = () => {
     return (
         <>
+            <span className={'pageTitle'}>Movies</span>
         </>
     )
 }
