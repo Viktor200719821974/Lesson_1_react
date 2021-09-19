@@ -24,6 +24,7 @@ const CustomPagination = ({setPage, numOfPages}) => {
                 color="primary"
                 hidePrevButton
                 hideNextButton
+                style={{marginTop: "20px"}}
             />
             </ThemeProvider>
         </div>

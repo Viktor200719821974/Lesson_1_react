@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import SingleContent from "../SingleContent/SingleContent";
 import CustomPagination from "../Pagination/CustomPagination";
 import Genres from "../Genres/Genres";
+import useGenres from "../../hooks/useGenres";
 
 const Movies = () => {
     const [page, setPage] = useState(1);
@@ -11,15 +12,17 @@ const Movies = () => {
     const [numOfPages, setNumOfPages] = useState();
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [genres, setGenres] = useState([]);
+    const genresUrl = useGenres(selectedGenres);
 
     const fetchMovies =async() =>{
-       const {data} = await axios(`${MAIN_API_MOVIES}${REACT_APP_API_KEY}${URL_API_MOVIES}${page}&with_genres=`);
+       const {data} = await axios(`${MAIN_API_MOVIES}${REACT_APP_API_KEY}${URL_API_MOVIES}${page}&with_genres=${genresUrl}`);
        setContent(data.results);
        setNumOfPages(data.total_pages);
     }
     useEffect(()=> {
         fetchMovies();
-    },[page]);
+        // eslint-disable-next-line
+    },[page, genresUrl]);
     return (
         <>
             <span className={'pageTitle'}>Відкрийте для себе кіно</span>
@@ -41,6 +44,7 @@ const Movies = () => {
                     media_type="movie"
                     vote_average={c.vote_average}
                 />)}
+
                 {numOfPages > 1 && (<CustomPagination setPage={setPage} numOfPages={numOfPages}/>)}
             </div>
         </>
