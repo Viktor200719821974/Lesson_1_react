@@ -1,16 +1,19 @@
 import axios from "axios";
-import {REACT_APP_API_KEY} from "../../constans/constans";
+import {REACT_APP_API_KEY, MAIN_API_MOVIES, URL_API_MOVIES} from "../../constans/constans";
 import {useEffect, useState} from "react";
 import SingleContent from "../SingleContent/SingleContent";
-import CustomPagination from "../CustomPagination/CustomPagination";
+import CustomPagination from "../Pagination/CustomPagination";
+import Genres from "../Genres/Genres";
 
 const Movies = () => {
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
     const [numOfPages, setNumOfPages] = useState();
+    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [genres, setGenres] = useState([]);
 
     const fetchMovies =async() =>{
-       const {data} = await axios(`https://api.themoviedb.org/3/discover/movie?api_key=${REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=`);
+       const {data} = await axios(`${MAIN_API_MOVIES}${REACT_APP_API_KEY}${URL_API_MOVIES}${page}&with_genres=`);
        setContent(data.results);
        setNumOfPages(data.total_pages);
     }
@@ -19,9 +22,16 @@ const Movies = () => {
     },[page]);
     return (
         <>
-            <span className={'pageTitle'}>Movies</span>
+            <span className={'pageTitle'}>Відкрийте для себе кіно</span>
+            <Genres
+                type="movie"
+                selectedGenres={selectedGenres}
+                setSelectedGenres={setSelectedGenres}
+                genres={genres}
+                setGenres={setGenres}
+                setPage={setPage}
+            />
             <div className={'trending'}>
-
                 {content && content.map((c)=><SingleContent
                     key={c.id}
                     id={c.id}
@@ -31,7 +41,7 @@ const Movies = () => {
                     media_type="movie"
                     vote_average={c.vote_average}
                 />)}
-                {numOfPages > 1 && <CustomPagination setPage={setPage} numOfPages={numOfPages}/>}
+                {numOfPages > 1 && (<CustomPagination setPage={setPage} numOfPages={numOfPages}/>)}
             </div>
         </>
     )

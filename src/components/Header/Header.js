@@ -6,7 +6,7 @@ const Header = () => {
 
             <span className={'header'} onClick={() => window.scroll(0, 0)}>
                <img className={'img_header'} src={clapperboard} alt="clapperboard"/>
-                Entertaiment Hub
+                центр розваг
                 <img className={'img_header'} src={videoCamera} alt="videoCamera"/>
             </span>
 

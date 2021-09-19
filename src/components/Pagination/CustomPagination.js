@@ -1,6 +1,7 @@
 import {Pagination, ThemeProvider} from "@mui/material";
 import { createTheme } from '@material-ui/core/styles';
 
+
 const CustomPagination = ({setPage, numOfPages}) => {
     const darkTheme = createTheme({
         palette: {
@@ -15,7 +16,9 @@ const CustomPagination = ({setPage, numOfPages}) => {
     return (
         <div>
             <ThemeProvider theme={darkTheme}>
+
             <Pagination
+
                 count={numOfPages || 10}
                 onChange={(e)=>  handlePageChange(e.target.textContent)}
                 color="primary"

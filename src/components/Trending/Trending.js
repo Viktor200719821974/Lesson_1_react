@@ -1,15 +1,20 @@
 import axios from "axios";
-import {REACT_APP_API_KEY} from "../../constans/constans";
+import {REACT_APP_API_KEY,MAIN_API_TRENDING} from "../../constans/constans";
 import {useEffect, useState} from "react";
 import SingleContent from "../SingleContent/SingleContent";
-import CustomPagination from "../CustomPagination/CustomPagination";
+import CustomPagination from "../Pagination/CustomPagination";
+// import prevButton from "../Pagination/image/prevButton.svg";
+// import nextButton from "../Pagination/image/nextButton.svg";
 
 const Trending = () => {
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
-
+// const nextPageChange = ()=>{
+//     setPage(page+1);
+//     window.scroll(0,0);
+// }
     const fetchTrending = async () => {
-        const {data} =await axios(`https://api.themoviedb.org/3/trending/all/day?api_key=${REACT_APP_API_KEY}&page=${page}`);
+        const {data} =await axios(`${MAIN_API_TRENDING}${REACT_APP_API_KEY}&page=${page}`);
         setContent(data.results);
     };
 useEffect(()=>{
@@ -17,7 +22,7 @@ useEffect(()=>{
 },[page])
     return (
         <>
-            <span className={'pageTitle'}>Trending</span>
+            <span className={'pageTitle'}>Актуальне сьогодні</span>
             <div className={'trending'}>
 
                     {content && content.map((c)=><SingleContent
@@ -29,7 +34,14 @@ useEffect(()=>{
                         media_type={c.media_type}
                         vote_average={c.vote_average}
                     />)}
-<CustomPagination setPage={setPage} />
+                {/*<div  className={'box_image'}>*/}
+                    {/*<img className={'button_pagination'} src={prevButton} alt="prevButton"/>*/}
+                    <CustomPagination setPage={setPage} />
+                    {/*/!*<img className={'button_pagination'}*!/*/}
+                    {/*     // onClick={(e)=> nextPageChange(e.target.textContent)}*/}
+                    {/*     //   */}
+                    {/*     // src={nextButton} alt="nextButton"/>*/}
+                {/*</div>*/}
             </div>
         </>
     )
