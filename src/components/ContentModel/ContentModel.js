@@ -10,6 +10,8 @@ import {REACT_APP_API_KEY} from "../../constans/constans";
 import {img_500, unavailable,unavailableLandscape} from "../../constans/constans";
 import {makeStyles } from '@material-ui/styles';
 import StarsRating from "../StarsRating/StarsRating";
+import YouTubeIcon from "@material-ui/icons/YouTube";
+import Carousel from "./Carousel/Carousel";
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -106,13 +108,23 @@ export default function ContentModel({children,media_type,id}) {
                                   ).substring(0, 4)}
                                   )
                            </span>
+                                   {content.tagline && (<i className="tagline">{content.tagline}</i>)}
                                <StarsRating rating={content.vote_average} key={content.id}/>
-                                   {content.tagline && (
-                                       <i className="tagline">{content.tagline}</i>
-                                   )}
                                <span className={'ContentModal__description'}>
                             {content.overview}
                                </span>
+                               <div>
+                                   <Carousel media_type={media_type} id={id} key={id}/>
+                               </div>
+                               <Button
+                                   variant="contained"
+                                   startIcon={<YouTubeIcon />}
+                                   color="secondary"
+                                   target="__blank"
+                                   href={`https://www.youtube.com/watch?v=${video}`}
+                               >
+                                   Watch the Trailer
+                               </Button>
                         </div>
                         </div>
                     </div>
