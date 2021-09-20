@@ -5,10 +5,11 @@ import axios from "axios";
 import Backdrop from '@mui/material/Backdrop';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-// import Button from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import {REACT_APP_API_KEY} from "../../constans/constans";
 import {img_500, unavailable,unavailableLandscape} from "../../constans/constans";
 import {makeStyles } from '@material-ui/styles';
+import StarsRating from "../StarsRating/StarsRating";
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -80,6 +81,7 @@ export default function ContentModel({children,media_type,id}) {
                     {content && (
                     <div className={classes.paper}>
                         <div className={'ContentModal'}>
+
                         <img src={content.poster_path
                             ? `${img_500}/${content.poster_path}`
                             : unavailable}
@@ -104,6 +106,7 @@ export default function ContentModel({children,media_type,id}) {
                                   ).substring(0, 4)}
                                   )
                            </span>
+                               <StarsRating rating={content.vote_average} key={content.id}/>
                                    {content.tagline && (
                                        <i className="tagline">{content.tagline}</i>
                                    )}
@@ -120,6 +123,7 @@ export default function ContentModel({children,media_type,id}) {
         </>
     );
 }
+
 
 
 

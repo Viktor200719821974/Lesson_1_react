@@ -9,6 +9,7 @@ import Series from "./components/Series/Series";
 import Favorite from "./components/Favorite/Favorite";
 import Search from "./components/Search/Search";
 
+
 function App() {
   return (
       <BrowserRouter>
