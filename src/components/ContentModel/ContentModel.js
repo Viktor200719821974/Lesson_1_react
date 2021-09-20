@@ -58,8 +58,6 @@ export default function ContentModel({children,media_type,id}) {
         fetchVideo();
         // eslint-disable-next-line
     }, []);
-
-
     return (
         <>
         <div className={'media'} onClick={handleOpen}>
