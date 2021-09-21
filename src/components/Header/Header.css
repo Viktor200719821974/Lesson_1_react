@@ -10,6 +10,8 @@
     font-family: "Montserrat" , sans-serif;
     font-size: 5vw;
     padding-bottom: 15px;
+    box-sizing: border-box;
+    padding-left: 320px;
     box-shadow: 0 1px 5px black;
     color: white;
     z-index: 100;

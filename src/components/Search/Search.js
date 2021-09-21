@@ -87,7 +87,7 @@ const Favorite = () => {
                    />
                ))}
 
-               { searchText &&  !content && (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
+               { searchText && !content && (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
 
                {numOfPages > 1 && (<CustomPagination setPage={setPage} numOfPages={numOfPages}/>)}
        </div>
