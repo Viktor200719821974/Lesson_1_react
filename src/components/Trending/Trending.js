@@ -6,10 +6,12 @@ import CustomPagination from "../Pagination/CustomPagination";
 // import prevButton from "../Pagination/image/prevButton.svg";
 // import nextButton from "../Pagination/image/nextButton.svg";
 
+
 const Trending = () => {
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
-// const nextPageChange = ()=>{
+// const nextPageChange = (page)=>{
+//     console.log(page);
 //     setPage(page+1);
 //     window.scroll(0,0);
 // }
@@ -37,10 +39,10 @@ useEffect(()=>{
                 {/*<div  className={'box_image'}>*/}
                     {/*<img className={'button_pagination'} src={prevButton} alt="prevButton"/>*/}
                     <CustomPagination setPage={setPage} />
-                    {/*/!*<img className={'button_pagination'}*!/*/}
-                    {/*     // onClick={(e)=> nextPageChange(e.target.textContent)}*/}
-                    {/*     //   */}
-                    {/*     // src={nextButton} alt="nextButton"/>*/}
+                    {/*<img className={'button_pagination'}*/}
+                    {/*     onClick={(e)=> nextPageChange(e.target)}*/}
+
+                    {/*     src={nextButton} alt="nextButton"/>*/}
                 {/*</div>*/}
             </div>
         </>
